@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Khoi Ngo - Home</title>
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=56cd6fc289191f99d8b03f008bd0ce1f">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=94dfe484ca2ce75af7681f230b4c80dd">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css?h=2cbf12caab31562d03bae9544edcad5f">
     <link rel="stylesheet" href="../assets/fonts/ionicons.min.css?h=2cbf12caab31562d03bae9544edcad5f">
-    <link rel="stylesheet" href="../assets/css/styles.min.css?h=249a64d37955ce7e9b4b10a6e744ba43">
+    <link rel="stylesheet" href="../assets/css/styles.min.css?h=66843bb4b820aa2e23d7886702c0b66d">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
@@ -32,90 +32,41 @@
     </nav>
     <div class="container">
         <section>
-            <div id="proj1_header" class="proj_header">
-                <h2 class="section-heading">Web Forum Website</h2>
-                <p>Marlie Russell and Khoi Ngo<br></p><a href="https://github.com/marlieer/COSC360/tree/dev" target="_blank"><i class="fa fa-github" style="font-size: 25px;"></i></a>
+            <div id="proj3_header" class="proj_header">
+                <h2 class="section-heading">Instagram Fake or Genuine ML</h2>
+                <p>Khoi Ngo<br></p><a href="https://github.com/khoi16ngo/InstragramFakeOrGenuine" target="_blank"><i class="fa fa-github" style="font-size: 25px;"></i></a>
                 <hr class="my-4">
             </div>
-            <div id="proj1_details">
-                <p class="text-left">Our website is called Mates &amp; Posts. Users can create, like and comment on posts. Users who are not logged in can still view and search for posts, but they cannot create or like posts. Figure 1 shows the main feed of posts. Users can sort posts by Most Recent, Views and Title. Trending Now showcases the top five posts with the most likes. Recently Viewed keeps track of a user’s previously viewed posts, up to five posts. Users can search for posts by category and title.<br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/1.png?h=ffeecd39f85bac2d4473a33940ebeb72">
-                    <figcaption class="figure-caption">Figure 1. Main page of forum. Users can search for posts or view the top or recent posts on the side.&nbsp;</figcaption>
+            <div id="proj3_details">
+                <p class="text-left">Social media has become a big part of many people's lives and spammers and fakes have emerged on these platforms. This project will help detect these fakes and spammers on Instagram. I used machine learning to train a model to help determine whether an Instagram account is genuine or fake. The dataset provided has 10 features:</p>
+                <ol>
+                    <li><strong>Profile Picture</strong>, user has profile picture or not<br></li>
+                    <li><strong>Numbers/Length of Username</strong>, ratio of number of numerical characters in username to its length</li>
+                    <li><strong>Full Name Words</strong>,&nbsp;full name in word tokens<br></li>
+                    <li><strong>Numbers/Length of Full Name</strong>,&nbsp;ratio of number of numerical characters in full name to its length<br></li>
+                    <li><strong>Name == Username</strong>,&nbsp;are username and full name literally the same<br></li>
+                    <li><strong>Description Length</strong>, bio length in characters<br></li>
+                    <li><strong>External URL</strong>, has external URL or not<br></li>
+                    <li><strong>Private</strong>, account private or not<br></li>
+                    <li><strong>Number of Posts</strong>, number of posts in account<br></li>
+                    <li><strong>Number of Followers</strong>, number of followers account has<br></li>
+                </ol>
+                <p class="text-left">In Figure 1, it displays the steps I have taken to finish my project. We first start by splitting our dataset into training and test data. We will save the test data for the final evaluation. Next I used a parameter grid and training data to determine which parameters will affect the training of the models by cross-validation. The best parameters for the models is used with the training data to retrain the models. Finally,&nbsp; I evaluated the models with the test data to test their performance.&nbsp;</p>
+                <figure class="figure text-center"><img class="img-fluid figure-img" src="../assets/img/project3/1.png?h=78adcec07f92f12791c8dc39bd763e4f">
+                    <figcaption class="figure-caption">Figure 1.&nbsp; Overview of the steps taken to accomplish project.<br></figcaption>
                 </figure>
-                <p class="text-left">Clicking on a post will show it. Administrators can delete any post or comment, logged in users can comment on and like the post, and post authors can edit and delete their posts as shown in Figure 2. After a user likes the post, the user can unlike the post at any time.<br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/2.png?h=876bb50054919efd332a0e4a49e6874f">
-                    <figcaption class="figure-caption">Figure 2.&nbsp; Post details displayed. Other users' comments will be shown.</figcaption>
-                </figure>
-                <p class="text-left">Users login with an email and password as shown in Figure 3. If a user forgets their password, they can click “Forgot Password?” to be redirected to the forgot password page in Figure 4. Users can register an account by clicking the Sign Up link where they will be directed to the Registration Page shown in Figure 5. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/3.png?h=bbda77dba4387c89643f026f16ea597e">
+                <p class="text-left">I trained the models and the results are shown in Figure 2. Note that all the models train and validation score are close. Therefore, the models are not overfitting, but they are fairly close so some models may be underfitting.&nbsp;<br></p>
+                <figure class="figure text-center"><img class="img-fluid figure-img" src="../assets/img/project3/2.png?h=97cabe85ac069b3b5f04216613e41506">
                     <figcaption class="figure-caption">Figure 3. Users that have account can input their information and sign in.</figcaption>
                 </figure>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/4.png?h=f78800fecef73f3d12dd4f1fbb5249fd">
+                <p class="text-left">The final results are displayed in Figure 3 and Figure 4. The models performed well because precision and recall scores are 0.908 and 0.92, respectively. In Figure 4, we can see the model predicted 5 false negatives and 6 false positives. These false predictions are not significant since it is fairly low, but we may have lost genuine accounts by incorrectly predicting.&nbsp;<br></p>
+                <figure class="figure" style="text-align: center;"><img class="img-fluid figure-img d-inline-block" src="../assets/img/project3/3.png?h=6a7803da8f5c98ce33243b10ab0c796f">
                     <figcaption class="figure-caption">Figure 4. If a user forgets their password, we will send an email to their account of the email provided.</figcaption>
                 </figure>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/5.png?h=0a536ced275c27dcc3b5b1e5adb33b5e">
+                <figure class="figure" style="text-align: center;"><img class="img-fluid figure-img" src="../assets/img/project3/4.png?h=251dfc070453a993372c83ceeaddbcb0">
                     <figcaption class="figure-caption">Figure 5. New users that wish to create an account must provide information in the fields.</figcaption>
                 </figure>
-                <p class="text-left">Logged in users can create new posts, separating categories by a semicolon. Posts cannot exceed 250 characters. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/6.png?h=aabd3a248aa1519daa4547666157fd27">
-                    <figcaption class="figure-caption">Figure 6. Registered users that logged in are able to create a post.</figcaption>
-                </figure>
-                <p class="text-left">Users can view their profile as shown in Figure 7. The user can see their email, birthdate, and when their account was created. Any posts the user created will be displayed underneath this information. Logged in users can view another user’s profile by clicking on the post author link. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/7.png?h=9d4efb4cd4594b2cad9ae8fdfd1c647c">
-                    <figcaption class="figure-caption">Figure 7. User's profile will display some information about the user and their posts.</figcaption>
-                </figure>
-                <p class="text-left">The user can edit any of the information in the form in Figure 8. Only PNG and JGP are accepted files for updating a profile picture. If a user wishes to update their password, they must add their old password to confirm their new password. A user does not need to fill the entire form. Only fields they change will be updated.&nbsp; <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/8.png?h=1fbe52cf33cd924a56bf3e19a5dd35f5">
-                    <figcaption class="figure-caption">Figure 8. Users can edit their information, change profile picture, and change their password.</figcaption>
-                </figure>
-                <p class="text-left">Administrators have an “Administration” tab on the top navigation bar. One of the links under this tab is the index of all registered users as shown in Figure 9. All registered users that are registered are displayed. Administrators to enable or disable users. A minus sign means they will disable and a plus sign means they will enable. Administrators can also delete users. Clicking the user’s name redirects to the user’s profile. Administrators may search for users by name, email, and post titles. After searching, if an admin wants to view all users, simply put “select type” and press submit. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/9.png?h=8ddfbf083b8e8617747f156b5a361d1c">
-                    <figcaption class="figure-caption">Figure 9. Administrators have access to enable, disable, delete, or view users.</figcaption>
-                </figure>
-                <p class="text-left">The other link that administrators can access is the analytics page in Figure 10. Administrators can see the number of registered users, the number of active users, the top 5 categories, a pie chart comparing enabled users and disabled users, and a column chart of new users per month. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/10.png?h=8ddfbf083b8e8617747f156b5a361d1c">
-                    <figcaption class="figure-caption">Figure 10. Administrators can view analytics about the website.</figcaption>
-                </figure>
-            </div>
-            <div id="proj1_features">
-                <h2 style="margin-top: 2em;">Summary of Features</h2>
-                <ul class="text-left">
-                    <li style="margin: 5px 0 0 0;">User Features<ul>
-                            <li>Browse items without registering<br></li>
-                            <li>Responsive design philosophy (minimum requirements for different non-mobile display sizes)&nbsp;<br></li>
-                            <li>Server-side security and validation - best practices for password handling<br></li>
-                            <li>Search for items/posts by keyword without registering<br></li>
-                            <li>Users, posts, comments, and likes stored in the database<br></li>
-                            <li>Form validation with JavaScript<br></li>
-                            <li>Register at the site by providing their name, e-mail, and birthdate<br></li>
-                            <li>Allow user login by providing email and password<br></li>
-                            <li>Create and comment on posts when logged into the site<br></li>
-                            <li>Users are required to be able to view/edit their profile<br></li>
-                            <li>User password recovery (via email)<br></li>
-                            <li>Error handling/bad navigation<br></li>
-                            <li>The site must maintain state (user state being logged on)<br></li>
-                        </ul>
-                    </li>
-                    <li style="margin: 5px 0 0 0;">Admin<ul>
-                            <li>Search for a user by name, email or post<br></li>
-                            <li>Enable/disable/delete users<br></li>
-                            <li>Remove posts and comments (only post authors can edit their post)<br></li>
-                        </ul>
-                    </li>
-                    <li style="margin: 5px 0 0 0;">Additional<ul>
-                            <li>Search and analysis of topics<br></li>
-                            <li>Hot threads/hot item tracking<br></li>
-                            <li>Visual display of updates, etc (site usage charts, etc) for admins<br></li>
-                            <li>Alerts on-page changes<br></li>
-                            <li>Styling flourishes<br></li>
-                            <li>All published posts by the user shown in their profile<br></li>
-                            <li>Can asynchronously like/unlike a post<br></li>
-                            <li>Sort posts by date, views or title<br></li>
-                            <li>Each post can have multiple searchable categories<br></li>
-                            <li>Tracks recently viewed posts with/without logging in<br></li>
-                        </ul>
-                    </li>
-                </ul>
+                <p>&nbsp;The models can predict fake accounts fairly well and there is no consequence for getting a fake account wrong. Following a fake account does not affect the user, however if there are external links on the profile and the user clicks on those, they could potentially get a virus or get scammed.&nbsp;Instagram could possibly use a&nbsp; model&nbsp; like the ones I used to go through their users to ensure fake accounts are deleted, but some users may be deleted when they were falsely claimed as fake. In this application, predicting a genuine account wrong has consequences. To improve the models, we could change or add more features. For example a feature of how many times the account has been reported for spam was not included in the dataset.&nbsp;</p>
             </div>
         </section>
     </div>
