@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Khoi Ngo - Home</title>
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=0993a63779935d766e035f9403fc38db">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=ff8af38e3b62e78353da628b3dcdbdd1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css?h=2cbf12caab31562d03bae9544edcad5f">
     <link rel="stylesheet" href="../assets/fonts/ionicons.min.css?h=2cbf12caab31562d03bae9544edcad5f">
-    <link rel="stylesheet" href="../assets/css/styles.min.css?h=66843bb4b820aa2e23d7886702c0b66d">
+    <link rel="stylesheet" href="../assets/css/styles.min.css?h=3db9e6ef26189df61b19e9c440ce4d5a">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
@@ -32,87 +32,66 @@
     </nav>
     <div class="container">
         <section>
-            <div id="proj1_header" class="proj_header">
+            <div id="proj2_header" class="proj_header">
                 <h2 class="section-heading">Inventory Customer Management GUI</h2>
                 <p>Khoi Ngo<br></p><a href="https://github.com/khoi16ngo/InventoryCustomerManagement" target="_blank"><i class="fa fa-github" style="font-size: 25px;"></i></a>
                 <hr class="my-4">
             </div>
-            <div id="proj1_details">
-                <p class="text-left">Our website is called Mates &amp; Posts. Users can create, like and comment on posts. Users who are not logged in can still view and search for posts, but they cannot create or like posts. Figure 1 shows the main feed of posts. Users can sort posts by Most Recent, Views and Title. Trending Now showcases the top five posts with the most likes. Recently Viewed keeps track of a user’s previously viewed posts, up to five posts. Users can search for posts by category and title.<br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/1.png?h=ffeecd39f85bac2d4473a33940ebeb72">
-                    <figcaption class="figure-caption">Figure 1. Main page of forum. Users can search for posts or view the top or recent posts on the side.&nbsp;</figcaption>
+            <div id="proj2_details">
+                <p class="text-left">In this project, I redesigned an inventory management system into a distributed system using the client-server architectural pattern and using a Model-View-Controller design pattern. The objectives of this project are:<br></p>
+                <ol>
+                    <li>Conceptual database design based on a narrative</li>
+                    <li>Logical database design through relational model mapping</li>
+                    <li>Logical database design through relational model mapping</li>
+                    <li>Java Graphical User Interface Event-Handling</li>
+                    <li>Client-Server Architecture</li>
+                    <li>Working with database through a Java program</li>
+                    <li>MVC</li>
+                </ol>
+                <p class="text-left">I used the narrative given to start building my database. At the start of the design, I looked for all the entities participating. This included Tool, Supplier, Customer, and Order. After, I added the specialization to some of the entities and the specializations that can not be overlapping, either the entity is one or the other. For Tool, I assumed that a tool must be either Electrical or Non-Electrical and similar to supplier; it had to be either International or Local. However for Customers there is partial participation because from the requirement description, it said the Customers “can” be either residential or commercial. So I assumed that the Customer could be either or none. Next, I added the relationships. Tools must be from a Supplier and Supplier must make a Tool. A Customer must buy a tool but a Tool does not have to be bought. This relationship will have a relation later so to differentiate&nbsp;duplicate tuples, I will add a date attribute. Tool, Supplier, and Order must participate since the order line’s primary key depends on Supplier, Tool, and Order information. Figure 1 displays the UML database design&nbsp; I created.<br></p>
+                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project2/1.png?h=ae68a83499898e8e476ad0da34118f5a">
+                    <figcaption class="figure-caption">Figure 1.&nbsp; Conceptual design of the management database.</figcaption>
                 </figure>
-                <p class="text-left">Clicking on a post will show it. Administrators can delete any post or comment, logged in users can comment on and like the post, and post authors can edit and delete their posts as shown in Figure 2. After a user likes the post, the user can unlike the post at any time.<br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/2.png?h=876bb50054919efd332a0e4a49e6874f">
-                    <figcaption class="figure-caption">Figure 2.&nbsp; Post details displayed. Other users' comments will be shown.</figcaption>
+                <p class="text-left">After finishing the conceptual design, the next step was to create the logical design of how the database will be built. For the specialization, I decided to use 8C where we add the specializations in the entity relations. Since the specializations only have 1 or 0 attributes, I found it would be a waste to separate the specialization relations. Therefore, I combine the specializations in their respective entities. I assume that the specializations are equal to limit the number of NULL values that may be present. After following the steps to transfer between conceptual to logical designs, Figure 2 shows how the database will be built with 6 tables.<br></p>
+                <figure class="figure text-center"><img class="img-fluid figure-img" src="../assets/img/project2/2.png?h=d63082f246dabd1eb673e6e13d7a0d96" width="700">
+                    <figcaption class="figure-caption">Figure 2. Logical design of how the database will be built.</figcaption>
                 </figure>
-                <p class="text-left">Users login with an email and password as shown in Figure 3. If a user forgets their password, they can click “Forgot Password?” to be redirected to the forgot password page in Figure 4. Users can register an account by clicking the Sign Up link where they will be directed to the Registration Page shown in Figure 5. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/3.png?h=bbda77dba4387c89643f026f16ea597e">
-                    <figcaption class="figure-caption">Figure 3. Users that have account can input their information and sign in.</figcaption>
+                <p class="text-left">After designing and building the database, I started designing the architecture of the front and back ends. I used a Model-View-Controller design pattern for both the client and server side. The controllers are the only point of contact for each model and view. The user's view notifies the client controller which then changes the client model. Then the client controller sends the information to the server controller to change its version of the model. It will also update the database. The client and server communicate via socket and sends the objects to change. The UML class diagram is designed in Figure 3.&nbsp;<br></p>
+                <figure class="figure" style="text-align: center;"><img class="img-fluid figure-img" src="../assets/img/project2/3.png?h=e27dab761556b505771baf157c0998aa" width="800">
+                    <figcaption class="figure-caption">Figure 3. High-level UML class diagram of the management system with client-server architectural design with MVC.</figcaption>
                 </figure>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/4.png?h=f78800fecef73f3d12dd4f1fbb5249fd">
-                    <figcaption class="figure-caption">Figure 4. If a user forgets their password, we will send an email to their account of the email provided.</figcaption>
+                <p class="text-left">The front-end is a Java GUI. The main screen will have to options for the user, the customer and tools management system. The user will select the options to move to a different view. Figure 4 shows the main screen.</p>
+                <figure class="figure" style="text-align: center;"><img class="img-fluid figure-img" src="../assets/img/project2/4.png?h=2008ef26d4d750f0652c4411e5b696ba" width="600">
+                    <figcaption class="figure-caption">Figure 4. Main screen of the management systems.</figcaption>
                 </figure>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/5.png?h=0a536ced275c27dcc3b5b1e5adb33b5e">
-                    <figcaption class="figure-caption">Figure 5. New users that wish to create an account must provide information in the fields.</figcaption>
+                <p class="text-left">The customer management system handled the customers that have ordered from the store. The GUI has two basic features, displaying the customer's information and searching for customers. To search, the user will need to specify what category to search by. The options are by customer id, customer name, or customer type. Once an option is selected, the user inputs a keyword and press search. A list of search results will be displayed below. The user can select a customer and their information will populate the customer information fields. The user can edit the information. The user can also add a new user or delete a user. Figure 5 shows the GUI of the customer management system.&nbsp;<br></p>
+                <figure class="figure" style="text-align: center;"><img class="img-fluid figure-img" src="../assets/img/project2/5.png?h=5835c28bce538f7f511bf347ef8bf8d6" width="700">
+                    <figcaption class="figure-caption">Figure 5. GUI of the customer management system.</figcaption>
                 </figure>
-                <p class="text-left">Logged in users can create new posts, separating categories by a semicolon. Posts cannot exceed 250 characters. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/6.png?h=aabd3a248aa1519daa4547666157fd27">
-                    <figcaption class="figure-caption">Figure 6. Registered users that logged in are able to create a post.</figcaption>
-                </figure>
-                <p class="text-left">Users can view their profile as shown in Figure 7. The user can see their email, birthdate, and when their account was created. Any posts the user created will be displayed underneath this information. Logged in users can view another user’s profile by clicking on the post author link. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/7.png?h=9d4efb4cd4594b2cad9ae8fdfd1c647c">
-                    <figcaption class="figure-caption">Figure 7. User's profile will display some information about the user and their posts.</figcaption>
-                </figure>
-                <p class="text-left">The user can edit any of the information in the form in Figure 8. Only PNG and JGP are accepted files for updating a profile picture. If a user wishes to update their password, they must add their old password to confirm their new password. A user does not need to fill the entire form. Only fields they change will be updated.&nbsp; <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/8.png?h=1fbe52cf33cd924a56bf3e19a5dd35f5">
-                    <figcaption class="figure-caption">Figure 8. Users can edit their information, change profile picture, and change their password.</figcaption>
-                </figure>
-                <p class="text-left">Administrators have an “Administration” tab on the top navigation bar. One of the links under this tab is the index of all registered users as shown in Figure 9. All registered users that are registered are displayed. Administrators to enable or disable users. A minus sign means they will disable and a plus sign means they will enable. Administrators can also delete users. Clicking the user’s name redirects to the user’s profile. Administrators may search for users by name, email, and post titles. After searching, if an admin wants to view all users, simply put “select type” and press submit. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/9.png?h=8ddfbf083b8e8617747f156b5a361d1c">
-                    <figcaption class="figure-caption">Figure 9. Administrators have access to enable, disable, delete, or view users.</figcaption>
-                </figure>
-                <p class="text-left">The other link that administrators can access is the analytics page in Figure 10. Administrators can see the number of registered users, the number of active users, the top 5 categories, a pie chart comparing enabled users and disabled users, and a column chart of new users per month. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/10.png?h=8ddfbf083b8e8617747f156b5a361d1c">
-                    <figcaption class="figure-caption">Figure 10. Administrators can view analytics about the website.</figcaption>
+                <p class="text-left">The tool management system allows the user to learn and buy tools. The system is similar to the previous one. The user can search for tools by id or name. The user can select a tool from the search results to see more information about it. The information will fill the tool information fields. Unlike the previous system, the user cannot edit the tool, but they can still add a new tool or delete the tool. The user can purchase the tool and it will decrease the stock of the item by one. Another feature is the user can check the tool inventory. When the check inventory button is pressed, the system will check the stocks of each tool. If a tool is below the stock threshold, the system will place an order for the item to be restocked. The user can view orders by inputting the date of the desired order and press the print order button. The order will be saved as a text file. The GUI for the tool management system is shown in Figure 6.<br></p>
+                <figure class="figure text-center"><img class="img-fluid figure-img" src="../assets/img/project2/6.png?h=03a615fd233a088b07ee41f8da50cb0c" width="700">
+                    <figcaption class="figure-caption">Figure 6. GUI of the tool management system.</figcaption>
                 </figure>
             </div>
-            <div id="proj1_features">
+            <div id="proj2_features">
                 <h2 style="margin-top: 2em;">Summary of Features</h2>
                 <ul class="text-left">
-                    <li style="margin: 5px 0 0 0;">User Features<ul>
-                            <li>Browse items without registering<br></li>
-                            <li>Responsive design philosophy (minimum requirements for different non-mobile display sizes)&nbsp;<br></li>
-                            <li>Server-side security and validation - best practices for password handling<br></li>
-                            <li>Search for items/posts by keyword without registering<br></li>
-                            <li>Users, posts, comments, and likes stored in the database<br></li>
-                            <li>Form validation with JavaScript<br></li>
-                            <li>Register at the site by providing their name, e-mail, and birthdate<br></li>
-                            <li>Allow user login by providing email and password<br></li>
-                            <li>Create and comment on posts when logged into the site<br></li>
-                            <li>Users are required to be able to view/edit their profile<br></li>
-                            <li>User password recovery (via email)<br></li>
-                            <li>Error handling/bad navigation<br></li>
-                            <li>The site must maintain state (user state being logged on)<br></li>
+                    <li style="margin: 5px 0 0 0;">Customer Management System<ul>
+                            <li>Search for a user by id, name or customer type<br></li>
+                            <li>Display user's information</li>
+                            <li>Edit and save user information<br></li>
+                            <li>Add a new user<br></li>
+                            <li>Delete a new user<br></li>
                         </ul>
                     </li>
-                    <li style="margin: 5px 0 0 0;">Admin<ul>
-                            <li>Search for a user by name, email or post<br></li>
-                            <li>Enable/disable/delete users<br></li>
-                            <li>Remove posts and comments (only post authors can edit their post)<br></li>
-                        </ul>
-                    </li>
-                    <li style="margin: 5px 0 0 0;">Additional<ul>
-                            <li>Search and analysis of topics<br></li>
-                            <li>Hot threads/hot item tracking<br></li>
-                            <li>Visual display of updates, etc (site usage charts, etc) for admins<br></li>
-                            <li>Alerts on-page changes<br></li>
-                            <li>Styling flourishes<br></li>
-                            <li>All published posts by the user shown in their profile<br></li>
-                            <li>Can asynchronously like/unlike a post<br></li>
-                            <li>Sort posts by date, views or title<br></li>
-                            <li>Each post can have multiple searchable categories<br></li>
-                            <li>Tracks recently viewed posts with/without logging in<br></li>
+                    <li style="margin: 5px 0 0 0;">Inventory Management System<ul>
+                            <li>Check tool inventory, restock any item under stock threshold<br></li>
+                            <li>Print order of certain date, saves as a text file of which items need to be restocked<br></li>
+                            <li>Search for a tool by id or name<br></li>
+                            <li>Display tool's information<br></li>
+                            <li>Add a new tool<br></li>
+                            <li>Delete a tool<br></li>
+                            <li>Buy a tool, decreases stock of item<br></li>
                         </ul>
                     </li>
                 </ul>

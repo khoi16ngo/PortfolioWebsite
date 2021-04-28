@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Khoi Ngo - Home</title>
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=0993a63779935d766e035f9403fc38db">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=ff8af38e3b62e78353da628b3dcdbdd1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css?h=2cbf12caab31562d03bae9544edcad5f">
     <link rel="stylesheet" href="../assets/fonts/ionicons.min.css?h=2cbf12caab31562d03bae9544edcad5f">
-    <link rel="stylesheet" href="../assets/css/styles.min.css?h=66843bb4b820aa2e23d7886702c0b66d">
+    <link rel="stylesheet" href="../assets/css/styles.min.css?h=3db9e6ef26189df61b19e9c440ce4d5a">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
 
-<body id="page-top">
+<body class="text-center" id="page-top">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary" id="mainNav">
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="index.html">Khoi Ngo</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler text-white navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -32,61 +32,42 @@
     </nav>
     <div class="container">
         <section>
-            <div id="proj1_header" class="proj_header">
+            <div id="proj5_header" class="proj_header">
                 <h2 class="section-heading">Voice Recognition App with Benevity</h2>
                 <p>Khoi Ngo and Branden Shin<br></p>
                 <hr class="my-4">
             </div>
-            <div id="proj1_details">
-                <p class="text-left">Our website is called Mates &amp; Posts. Users can create, like and comment on posts. Users who are not logged in can still view and search for posts, but they cannot create or like posts. Figure 1 shows the main feed of posts. Users can sort posts by Most Recent, Views and Title. Trending Now showcases the top five posts with the most likes. Recently Viewed keeps track of a user’s previously viewed posts, up to five posts. Users can search for posts by category and title.<br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/1.png?h=ffeecd39f85bac2d4473a33940ebeb72">
-                    <figcaption class="figure-caption">Figure 1. Main page of forum. Users can search for posts or view the top or recent posts on the side.&nbsp;</figcaption>
+            <div id="proj5_details" class="proj_dev">
+                <p class="text-left">In 2018, the Gartner Research group predicted that roughly 30% of all interactions with technology will be performed via conversations with smart machines [1]. Thus, we have seen a plethora of tech corporations such as Amazon, Google, Apple, Microsoft and Samsung (to name a few) adopt and invest in their voice recognition technology. As this technology continues to grow, the market for it grows as well [2].<br></p>
+                <p class="text-left">This project is sponsored by the company, Benevity. Benevity provides a corporate social responsibility platform that promotes and facilitates charitable giving and volunteering efforts for companies and their employees. Benevity has given our group the opportunity to incorporate voice recognition technology with their API, in an effort to improve the user experience. </p>
+                <p class="text-left">As a general overview of this project, we have developed an Android app that uses Google Assistant voice commands to use the Benevity API and search for causes. A user can search for causes using either a keyword or a location (or both), and the results are displayed in the app. Once the results are displayed, the user is then able to navigate the list of results using built-in voice commands. Figure 1 below shows a typical use case of this app, where a user launches the Google Assistant and uses a voice command to search for causes. They then make a subsequent voice command to fetch more details about a cause.<br></p>
+                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project5/1.png?h=293b4af2355d0b850d353654d940b77a">
+                    <figcaption class="figure-caption">Figure 1. Screenshots from our Android app showing a search using the Google Assistant.</figcaption>
                 </figure>
-                <p class="text-left">Clicking on a post will show it. Administrators can delete any post or comment, logged in users can comment on and like the post, and post authors can edit and delete their posts as shown in Figure 2. After a user likes the post, the user can unlike the post at any time.<br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/2.png?h=876bb50054919efd332a0e4a49e6874f">
-                    <figcaption class="figure-caption">Figure 2.&nbsp; Post details displayed. Other users' comments will be shown.</figcaption>
+                <p class="text-left">Figure 2 shows the views of our app. We can see the main page has a basic search query where user can search by keyword and/or location. The next view will display the results if found. The user can select a cause they wish to learn more about. After clicking a cause, the information of that cause will be displayed to the user.&nbsp;</p>
+                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project5/2a.png?h=813235154605dc89d014894f956de3e9" width="300"><img class="figure-img" src="../assets/img/project5/2b.png?h=7435351e8cbe80b7f15a0a9eee81d20b" width="300"><img class="figure-img" src="../assets/img/project5/2c.png?h=b072f817927afea2a0abbb9666d53501" width="300">
+                    <figcaption class="figure-caption">Figure 2. Mockups of our app.</figcaption>
                 </figure>
-                <p class="text-left">Users login with an email and password as shown in Figure 3. If a user forgets their password, they can click “Forgot Password?” to be redirected to the forgot password page in Figure 4. Users can register an account by clicking the Sign Up link where they will be directed to the Registration Page shown in Figure 5. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/3.png?h=bbda77dba4387c89643f026f16ea597e">
-                    <figcaption class="figure-caption">Figure 3. Users that have account can input their information and sign in.</figcaption>
-                </figure>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/4.png?h=f78800fecef73f3d12dd4f1fbb5249fd">
-                    <figcaption class="figure-caption">Figure 4. If a user forgets their password, we will send an email to their account of the email provided.</figcaption>
-                </figure>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/5.png?h=0a536ced275c27dcc3b5b1e5adb33b5e">
-                    <figcaption class="figure-caption">Figure 5. New users that wish to create an account must provide information in the fields.</figcaption>
-                </figure>
-                <p class="text-left">Logged in users can create new posts, separating categories by a semicolon. Posts cannot exceed 250 characters. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/6.png?h=aabd3a248aa1519daa4547666157fd27">
-                    <figcaption class="figure-caption">Figure 6. Registered users that logged in are able to create a post.</figcaption>
-                </figure>
-                <p class="text-left">Users can view their profile as shown in Figure 7. The user can see their email, birthdate, and when their account was created. Any posts the user created will be displayed underneath this information. Logged in users can view another user’s profile by clicking on the post author link. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/7.png?h=9d4efb4cd4594b2cad9ae8fdfd1c647c">
-                    <figcaption class="figure-caption">Figure 7. User's profile will display some information about the user and their posts.</figcaption>
-                </figure>
-                <p class="text-left">The user can edit any of the information in the form in Figure 8. Only PNG and JGP are accepted files for updating a profile picture. If a user wishes to update their password, they must add their old password to confirm their new password. A user does not need to fill the entire form. Only fields they change will be updated.&nbsp; <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/8.png?h=1fbe52cf33cd924a56bf3e19a5dd35f5">
-                    <figcaption class="figure-caption">Figure 8. Users can edit their information, change profile picture, and change their password.</figcaption>
-                </figure>
-                <p class="text-left">Administrators have an “Administration” tab on the top navigation bar. One of the links under this tab is the index of all registered users as shown in Figure 9. All registered users that are registered are displayed. Administrators to enable or disable users. A minus sign means they will disable and a plus sign means they will enable. Administrators can also delete users. Clicking the user’s name redirects to the user’s profile. Administrators may search for users by name, email, and post titles. After searching, if an admin wants to view all users, simply put “select type” and press submit. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/9.png?h=8ddfbf083b8e8617747f156b5a361d1c">
-                    <figcaption class="figure-caption">Figure 9. Administrators have access to enable, disable, delete, or view users.</figcaption>
-                </figure>
-                <p class="text-left">The other link that administrators can access is the analytics page in Figure 10. Administrators can see the number of registered users, the number of active users, the top 5 categories, a pie chart comparing enabled users and disabled users, and a column chart of new users per month. <br></p>
-                <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/project1/10.png?h=8ddfbf083b8e8617747f156b5a361d1c">
-                    <figcaption class="figure-caption">Figure 10. Administrators can view analytics about the website.</figcaption>
-                </figure>
+                <p class="text-left">To summarize, we developed an Android app that can retrieve data using the Benevity API. This app can be launched with the Google Assistant to vocally search for causes in a more convenient manner. Additionally, the user can navigate through the results returned by the API using voice commands, giving the app an almost chat-bot like feel. The app was converted into an Android Library to promote code reuse in the future.</p>
+                <p class="text-left">With the rise in voice recognition technology, we believe it is beneficial for Benevity to begin investing resources into it to provide an added convenience to their customers. Voice recognition technology is growing continuously, and the leading companies (such as Apple’s Siri and Google Assistant) continue to improve their voice recognition products. Our project provides evidence that it is possible for Benevity to integrate voice recognition into their products to improve the user experience. </p>
             </div>
-            <div id="proj1_features">
-                <h2 style="margin-top: 2em;">Summary of Features</h2>
-                <ul>
-                    <li>Search by query and/or location through Google Assistant</li>
-                    <li>Search query and/or through voice commands within app</li>
-                    <li>Search query and/or through typing in app</li>
-                    <li>Display results and cause details</li>
-                    <li>Move through app with voice commands using SpeechRecognizer</li>
-                    <li>Outputs information to user using Text-to-Speech</li>
+            <div id="proj5_walkthrough" class="proj_dev">
+                <h2>Walkthrough Gif</h2><img class="img-fluid" src="../assets/img/project5/walkthrough.gif?h=3aafb07d55c11c18e9caaf8466f9691f" width="400">
+            </div>
+            <div id="proj5_features">
+                <h2 class="text-left" style="margin-top: 2em;">Summary of Features</h2>
+                <ul class="text-left">
+                    <li>Search by keywords and/or location through Google Assistant</li>
+                    <li>Search by keywords and/or location through voice commands in app</li>
+                    <li>Search by keywords and/or location through typing in app</li>
+                    <li>Use voice commands to move through app</li>
+                    <li>App outputs information to user</li>
+                    <li>Accessible app for visually impaired</li>
                 </ul>
+            </div>
+            <div id="proj5_references">
+                <h2 class="text-left" style="margin-top: 2em;">References</h2>
+                <p class="text-left">[1] "Market Trends: Voice as a UI on Consumer Devices — What Do Users Want?", Gartner, 2015. [Online]. Available:&nbsp;<br>https://www.gartner.com/en/documents/3021226/market-trends-voice-as-a-ui-on-consumer-devices-what-do-. [Accessed: 16- Jan- 2021].<br><br>[2] Liu, S., 2021. Global Voice Recognition Market 2025 | Statista. [online] Statista. Available at: [Accessed 16 January 2021].</p>
             </div>
         </section>
     </div>
