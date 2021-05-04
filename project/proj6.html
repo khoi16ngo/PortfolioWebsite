@@ -33,81 +33,17 @@
     <div class="container">
         <section>
             <div id="proj4_header" class="proj_header">
-                <h2 class="section-heading">Car Detection ML</h2>
-                <p>Andrew Lee, Brandon Low-on, Khoi Ngo, and Branden Shin<br></p><a href="https://github.com/bshin29/ENEL645_Group14" target="_blank"><i class="fa fa-github" style="font-size: 25px;"></i></a>
+                <h2 class="section-heading">Steam Games Popularity ML</h2>
+                <p>Khoi Ngo<br></p><a href="https://github.com/khoi16ngo/SteamGamePopularityAnalysisML" target="_blank"><i class="fa fa-github" style="font-size: 25px;"></i></a>
                 <hr class="my-4">
+                <h4 class="text-primary section-heading">Currently: In Progress</h4>
             </div>
             <div id="proj4_details">
-                <p class="text-left">The objective of this project is to train a classifier that distinguishes the make (or brand) of automobiles from the Stanford Cars dataset [1]. A well trained classifier can efficiently determine the make or brand of a car based off of an image. For example, for police chases or hit and runs, if an individual was able to capture an image of the culprit's car the classifier will be able to help identify what brand it belongs to and narrow down the suspects. Meyer and Kuschk [2] talk about how object detection can be achieved using deep learning on radar and camera images, showing a classifier of this nature has potential. In the future, companies can also easily scan traffic data that could contain hundreds of cars in it and quickly identify the brand and model of each individual car [3]. <br></p>
-                <p class="text-left">This project uses the Stanford Cars dataset [1]. The original dataset contains 16,185 images, split into a training (8144 images) and testing set (8041 images). There are 196 classes of cars based on its make, model, and year (ex: “<em>Acura Integra Type R 2001</em>”). The image quality unfortunately varies from image to image, as they capture the car at various angles, backgrounds, lighting, and distance. Figure 1 below shows a couple of the images from the dataset and their labels. <br></p>
-                <figure class="figure text-center"><img class="img-fluid figure-img" src="../assets/img/project4/1.png?h=61c15a02428432de55c8e5f153a230c8">
-                    <figcaption class="figure-caption">Figure 1.&nbsp; Example images found in the dataset.<br></figcaption>
-                </figure>
-                <p class="text-left">After attempting to train our models on the original dataset, we realized there were some alterations that we could make to the data itself to improve results. We found our models were overfitting and Figure 2 shows the training vs validation accuracies of each model.<br></p>
-                <figure class="figure" style="text-align: center;"><img class="img-fluid figure-img" src="../assets/img/project4/2.png?h=61c15a02428432de55c8e5f153a230c8">
-                    <figcaption class="figure-caption">Figure 2. Midterm training and validation accuracy curves for (a) Control model CNN (b) AlexNet, (c) VGG-16, and (d) ResNet50 models</figcaption>
-                </figure>
-                <p>The first adjustment we made was to increase the number of training samples we had by moving half of the testing dataset to the training dataset. More training data generally leads to better results and helps mitigate overfitting. After this adjustment, we were able to train our models with 50% more training data (12,159 training images and 4026 testing images).<br></p>
-                <p>Secondly, we cropped each image to remove background noise in the samples and ensure that the focal point of each image was the car. Stanford conveniently provided a separate file detailing the bounding boxes for each image, and a few examples can be seen in Figure 2 below. Cropping the images around these boxes would reduce background noise and improve results. An adapted dataset was provided online that contained images cropped to their respective bounding boxes [4].&nbsp;<br></p>
-                <p>The original Stanford Cars dataset is a classification problem to determine the make <em>and the model</em> of each vehicle. This was a 196 class problem, with an average number of 83 samples per class. The final adjustment we made to the dataset was to reduce the complexity of the problem by combining samples of the same make to reduce the number of classes from 196 to 49.<br></p>
-                <p class="text-left">We also employed several data pre-processing and augmentation techniques. First and foremost, we normalize image size by re-sizing each image to dimensions of 224 by 224. Additionally, we scaled the images by dividing each pixel by 255 (min-max scaling). After resizing and scaling, we employed several data augmentation techniques including randomized rotations by 20o, zooms of 10%, horizontal flips, shifts in width/height by 10%, and shear rotations of 20%. Finally, the training data is split into 80-20 training and validation sets with a stratified class distribution (results in 9138 training, and 3021 validation images).<br></p>
-                <p>We built two CNN models from scratch and trained two other&nbsp; pre-trained models using transfer learning. The two scratch models were a basic CNN model and an AlexNet model. The two models used for transfer learning were VGG-16 and ResNet50 and they were trained using the ImageNet dataset. We ended up training the transfer-learning models from scratch also.</p>
-                <div class="table-responsive text-center">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Model</th>
-                                <th>Preliminary Test Accuracy (196 classes)</th>
-                                <th>Final Test Accuracy (49 classes)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Control Model (From Scratch)</strong><br></td>
-                                <td>0.0572<br></td>
-                                <td>0.2754<br></td>
-                            </tr>
-                            <tr>
-                                <td><strong>AlexNet (From Scratch)</strong><br></td>
-                                <td>0.0295<br></td>
-                                <td>0.1686<br></td>
-                            </tr>
-                            <tr>
-                                <td><strong>VGG-16 (Transfer Learning)</strong><br></td>
-                                <td>0.3441<br></td>
-                                <td>0.7052<br></td>
-                            </tr>
-                            <tr>
-                                <td><strong>VGG-16 (From Scratch)</strong><br></td>
-                                <td>-<br></td>
-                                <td>0.2064<br></td>
-                            </tr>
-                            <tr>
-                                <td><strong>ResNet50 (Transfer Learning)</strong><br></td>
-                                <td>0.0515<br></td>
-                                <td>0.2131<br></td>
-                            </tr>
-                            <tr>
-                                <td><strong>ResNet50 (From Scratch)</strong><br></td>
-                                <td>-<br></td>
-                                <td>0.2072<br></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p>In total, 6 models were developed and the accuracy scores on the test set were recorded. Each model was trained using the exact same pre-processing methods on the input data, and with the same hyperparameters. The table above shows the results of our experimentation, where we compare the results of our models on the adjusted dataset versus our results on the original dataset from the midterm.&nbsp;<br></p>
-                <p>In addition to these metrics, we also plotted the training and validation accuracy curves for each model. The plots are shown in Figures 3. Note that the models are not overfitting anymore and the are close enough not to be considered underfitting too.</p>
-                <figure class="figure" style="text-align: center;"><img class="img-fluid figure-img" src="../assets/img/project4/3.png?h=89e078fc01919ac72d08ba334f98d667">
-                    <figcaption class="figure-caption">Figure 3.&nbsp; Final training and validation accuracy curves for (a) Control model CNN (b) ResNet50 (from scratch), (c) VGG-16 (from scratch), (d) AlexNet (e) ResNet50 (transfer learning), and (f) VGG-16 (transfer learning).</figcaption>
-                </figure>
-                <p>For our midterm results, we observed a significant deviation between the training accuracies and the validation accuracies (Figure 2), which is indicative of overfitting. For our final results (Figure 3), we have reduced the overfitting in our models, which is shown by the smaller deviation between the two curves. This is largely due to the reduction of model complexity in our adjusted dataset. </p>
-                <p>The table shows that our models saw an increase in accuracy after adjusting the dataset. We believe one reason for this is due to the reduction of model complexity. Reducing the number of classes from 196 to 49 also reduced the number of trainable parameters, and this improved results. The dataset had more training samples per class, and we believe this played a role as well. Since each class in the original dataset had only 83 photos on average, we would need more samples per class in order to develop a decently performing model. However, increasing the number of training data will surely increase the time for the model to learn. We found that our models were training slowly due to the limitations in our technology, so it may not be feasible to increase the number of photos unless the technology is powerful enough.</p>
-                <p>Through our experimentation, our group was successfully able to develop a CNN model that can predict the make of a vehicle with an accuracy of 70.52% on the testing set. This was accomplished using a VGG-16 model with weights pre-trained on the ImageNet dataset. </p>
-                <p>One of our future goals we aimed to accomplish next would be to develop and create a machine learning model that can classify car models within a specific car brand. An example of this would be to train the model to look at only Audi cars and then allow it to distinguish and classify the individual models of the Audi brand such as an Audi A4 and Audi Q7. Secondly, another important objective would have been to train the classifier to examine more than one car at a time starting with just two. Finding a way to segment the image for the classifier to distinguish that there are two car models on the image will prove to be a difficult challenge, but it has more real-world applications to it as we are not always going to have one car perfectly isolated in an image.</p>
+                <p class="text-left">Using my knowledge from school, I am exploring a topic I am interested in. With the rise of pc gaming, Steam is one of the world's largest hub for video game distribution and people can purchase plethora of different types of games. In this project, I will find the top games from Steam by highest average players on at the same time per month and project where their popularity trend. This project was inspired by a Kaggle dataset provided by Bogacz which includes information&nbsp; of more than 1000 games on Steam [1]. The only restrictions are the data has over 1000 games and was collected with limited entries. I will use his data to figure out the popular games I want to investigate then Bogcaz linked to the source where he collected his data. I will webscrape this website to get more data for the games I am investigating. The website is a valuable tool to measure trends of games on Steam by collecting number of concurrent players per game in the Steam catalogue [2].<br></p>
             </div>
             <div id="proj4_reference">
                 <h2>References</h2>
-                <p>[1] J. Li, "Stanford Cars Dataset", <em>Kaggle.com</em>, 2018. [Online]. Available: https://www.kaggle.com/jessicali9530/stanford-cars-dataset. [Accessed: 16- Feb- 2021].<br><br>[2] M. Meyer and G. Kuschk, "Deep Learning Based 3D Object Detection for Automotive Radar and Camera," 2019 16th European Radar Conference (EuRAD), PARIS, France, 2019, pp. 133-136.<br><br>[3] Ni, X., Huttunen, H. Vehicle Attribute Recognition by Appearance: Computer Vision Methods for Vehicle Type, Make and Model Classification. J Sign Process Syst (2020).&nbsp;https://doi.org/10.1007/s11265-020-01567-6<br><br>[4] "Vehicle-detected Stanford Cars Data classes folder", <em>Kaggle.com</em>, 2019. [Online]. Available: https://www.kaggle.com/sungtheillest/vehicledetected-stanford-cars-data-classes-folder. [Accessed: 31- Mar- 2021].<br><br></p>
+                <p>[1] M. Bogacz, "Popularity of games on steam", <em>Kaggle.com</em>, 2021. [Online]. Available: https://www.kaggle.com/michau96/popularity-of-games-on-steam. [Accessed: 29- Apr- 2021].<br><br>[2]&nbsp;J. Gray, “Steam charts - tracking what's played,” Jul-2012. [Online]. Available: https://steamcharts.com/. [Accessed: 04-May-2021]. <br></p>
             </div>
         </section>
     </div>
